@@ -1,19 +1,93 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Văn bản - Trạm Cấp Nước</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trạm Cấp Nước Xã Ngũ Lạc - Văn Bản</title>
+  
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary-blue': '#0056b3',
+            'secondary-blue': '#007bff',
+            'accent-light': '#e0f2f7',
+            'dark-text': '#212529',
+            'light-text': '#6c757d',
+            'bg-main': '#f8f9fa',
+            'border-subtle': '#dee2e6',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Roboto', 'Arial', 'sans-serif'], 
+          },
+          boxShadow: {
+            'card': '0 4px 12px rgba(0, 0, 0, 0.08)',
+            'header': '0 10px 30px rgba(0, 0, 0, 0.1)',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-blue-50 text-gray-800">
-  <header class="bg-blue-700 text-white p-4"><div class="container mx-auto"><h1 class="text-2xl font-bold">Văn bản</h1></div></header>
-  <nav class="bg-blue-600 text-white p-2"><div class="container mx-auto flex gap-4 flex-wrap">
-    <a href="index.html">Trang chủ</a><a href="about.html">Giới thiệu</a><a href="news.html">Tin tức</a><a href="gallery.html">Thư viện ảnh</a><a href="docs.html" class="font-bold underline">Văn bản</a><a href="contact.html">Liên hệ</a><a href="admin.html">Admin</a></div></nav>
-  <main class="container mx-auto mt-8">
-    <ul class="list-disc list-inside space-y-2">
-      <li><a href="#" class="text-blue-700 hover:underline">Thông báo số 01 - Quy định xử lý nước</a></li>
-      <li><a href="#" class="text-blue-700 hover:underline">Biểu mẫu đăng ký đấu nối cấp nước</a></li>
-    </ul>
+<body class="bg-bg-main text-dark-text font-sans antialiased min-h-screen flex flex-col">
+
+  <div id="header-placeholder"></div>
+
+  <main class="container mx-auto my-8 p-4 md:p-8 flex-grow bg-white shadow-card rounded-lg">
+    <h1 class="text-3xl font-bold text-primary-blue mb-6 border-b-2 pb-3 border-border-subtle">Văn Bản và Quy Định</h1>
+    
+    <p class="text-lg mb-6 text-light-text">
+        Tại đây, bạn có thể tìm thấy các văn bản pháp lý, quy định và hướng dẫn liên quan đến hoạt động cấp nước của Trạm.
+    </p>
+
+    <div class="space-y-6">
+        <div class="flex items-center p-4 bg-accent-light rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
+            <svg class="w-8 h-8 text-primary-blue mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/>
+            </svg>
+            <div>
+                <h3 class="text-xl font-semibold text-dark-text mb-1">Quy định về chất lượng nước sạch</h3>
+                <p class="text-sm text-light-text mb-2">Ban hành ngày: 01/01/2025</p>
+                <a href="#" target="_blank" class="text-secondary-blue hover:text-primary-blue hover:underline font-medium transition-colors duration-200">Tải về (PDF) &rarr;</a>
+            </div>
+        </div>
+
+        <div class="flex items-center p-4 bg-accent-light rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
+            <svg class="w-8 h-8 text-primary-blue mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/>
+            </svg>
+            <div>
+                <h3 class="text-xl font-semibold text-dark-text mb-1">Hướng dẫn sử dụng nước tiết kiệm hiệu quả</h3>
+                <p class="text-sm text-light-text mb-2">Ban hành ngày: 15/06/2024</p>
+                <a href="#" target="_blank" class="text-secondary-blue hover:text-primary-blue hover:underline font-medium transition-colors duration-200">Tải về (PDF) &rarr;</a>
+            </div>
+        </div>
+
+        <div class="flex items-center p-4 bg-accent-light rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
+            <svg class="w-8 h-8 text-primary-blue mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/>
+            </svg>
+            <div>
+                <h3 class="text-xl font-semibold text-dark-text mb-1">Chính sách bảo vệ môi trường và nguồn nước</h3>
+                <p class="text-sm text-light-text mb-2">Ban hành ngày: 01/03/2024</p>
+                <a href="#" target="_blank" class="text-secondary-blue hover:text-primary-blue hover:underline font-medium transition-colors duration-200">Tải về (PDF) &rarr;</a>
+            </div>
+        </div>
+        
+        </div>
   </main>
-  <footer class="bg-blue-700 text-white mt-12 p-4 text-center">&copy; 2025 Trạm Cấp Nước Xã Ngũ Lạc.</footer>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/main.js"></script>
+
 </body>
 </html>

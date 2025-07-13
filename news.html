@@ -1,39 +1,84 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tin tức - Trạm Cấp Nước</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trạm Cấp Nước Xã Ngũ Lạc - Tin Tức</title>
+  
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary-blue': '#0056b3',
+            'secondary-blue': '#007bff',
+            'accent-light': '#e0f2f7',
+            'dark-text': '#212529',
+            'light-text': '#6c757d',
+            'bg-main': '#f8f9fa',
+            'border-subtle': '#dee2e6',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Roboto', 'Arial', 'sans-serif'], 
+          },
+          boxShadow: {
+            'card': '0 4px 12px rgba(0, 0, 0, 0.08)',
+            'header': '0 10px 30px rgba(0, 0, 0, 0.1)',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-blue-50 text-gray-800">
-  <header class="bg-blue-700 text-white p-4"><div class="container mx-auto"><h1 class="text-2xl font-bold">Tin tức</h1></div></header>
-  <nav class="bg-blue-600 text-white p-2"><div class="container mx-auto flex gap-4 flex-wrap">
-    <a href="index.html">Trang chủ</a><a href="about.html">Giới thiệu</a><a href="news.html" class="font-bold underline">Tin tức</a><a href="gallery.html">Thư viện ảnh</a><a href="docs.html">Văn bản</a><a href="contact.html">Liên hệ</a><a href="admin.html">Admin</a></div></nav>
-  <main>
-    <section class="container mx-auto mt-6"></section> class="container mx-auto mt-6" id="external-news"></main>
-  <footer class="bg-blue-700 text-white mt-12 p-4 text-center">&copy; 2025 Trạm Cấp Nước Xã Ngũ Lạc.</footer>
-  <script src="js/rss-load.js"></script>
+<body class="bg-bg-main text-dark-text font-sans antialiased min-h-screen flex flex-col">
 
-<script>
-fetch("https://docs.google.com/spreadsheets/d/1apDACOrX5Xd8Q7ugZm6Fdjti1X0LhAx0QCopuXu9pRQ/pub?output=csv")
-  .then(res => res.text())
-  .then(csv => {
-    const rows = csv.split("\n").slice(1);
-    const container = document.querySelector("main section") || document.querySelector("main");
-    rows.forEach(line => {
-      const [title, date, content] = line.split(",");
-      if (!title) return;
-      const el = document.createElement("article");
-      el.className = "bg-white shadow p-4 rounded-xl mb-4";
-      el.innerHTML = `
-        <h3 class="font-bold text-lg">${title}</h3>
-        <p class="text-sm text-gray-600">Ngày đăng: ${new Date(date).toLocaleDateString("vi-VN")}</p>
-        <p>${content}</p>
-      `;
-      container.appendChild(el);
-    });
-  })
-  .catch(err => console.error("Lỗi khi tải Google Sheet:", err));
-</script>
+  <div id="header-placeholder"></div>
+
+  <main class="container mx-auto my-8 p-4 md:p-8 flex-grow bg-white shadow-card rounded-lg">
+    <h1 class="text-3xl font-bold text-primary-blue mb-6 border-b-2 pb-3 border-border-subtle">Tin Tức và Sự Kiện</h1>
+    
+    <div class="space-y-8">
+        <article class="border-b pb-6 border-border-subtle last:border-b-0 last:pb-0">
+            <h2 class="text-2xl font-semibold text-dark-text mb-2">Thông báo về kế hoạch bảo trì hệ thống cấp nước</h2>
+            <p class="text-sm text-light-text mb-3">Ngày đăng: 10/07/2025</p>
+            <p class="text-light-text leading-relaxed mb-4">
+                Trạm Cấp Nước Xã Ngũ Lạc xin thông báo về kế hoạch bảo trì định kỳ hệ thống cấp nước chính nhằm đảm bảo chất lượng nước và sự ổn định của dịch vụ. Kế hoạch này sẽ diễn ra vào ngày [Ngày] từ [Giờ] đến [Giờ]. 
+                Chúng tôi khuyến nghị quý khách hàng dự trữ nước trong thời gian này.
+            </p>
+            <a href="#" class="inline-block text-secondary-blue hover:text-primary-blue hover:underline font-medium transition-colors duration-200">Đọc thêm &rarr;</a>
+        </article>
+
+        <article class="border-b pb-6 border-border-subtle last:border-b-0 last:pb-0">
+            <h2 class="text-2xl font-semibold text-dark-text mb-2">Hội nghị nâng cao nhận thức sử dụng nước tiết kiệm</h2>
+            <p class="text-sm text-light-text mb-3">Ngày đăng: 05/07/2025</p>
+            <p class="text-light-text leading-relaxed mb-4">
+                Vào ngày 05/07/2025, Trạm Cấp Nước Xã Ngũ Lạc đã tổ chức thành công hội nghị "Nâng cao nhận thức sử dụng nước tiết kiệm" tại [Địa điểm]. Hội nghị đã thu hút sự tham gia đông đảo của người dân và các cấp chính quyền, với nhiều hoạt động thiết thực và thông tin hữu ích.
+            </p>
+            <a href="#" class="inline-block text-secondary-blue hover:text-primary-blue hover:underline font-medium transition-colors duration-200">Đọc thêm &rarr;</a>
+        </article>
+
+        <article class="border-b pb-6 border-border-subtle last:border-b-0 last:pb-0">
+            <h2 class="text-2xl font-semibold text-dark-text mb-2">Phát động chiến dịch "Vì một cộng đồng xanh, sạch, bền vững"</h2>
+            <p class="text-sm text-light-text mb-3">Ngày đăng: 01/07/2025</p>
+            <p class="text-light-text leading-relaxed mb-4">
+                Trạm Cấp Nước Xã Ngũ Lạc vừa phát động chiến dịch cộng đồng "Vì một cộng đồng xanh, sạch, bền vững" nhằm khuyến khích người dân tham gia vào các hoạt động bảo vệ nguồn nước và môi trường sống.
+            </p>
+            <a href="#" class="inline-block text-secondary-blue hover:text-primary-blue hover:underline font-medium transition-colors duration-200">Đọc thêm &rarr;</a>
+        </article>
+
+        </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/main.js"></script>
 
 </body>
 </html>

@@ -3,118 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Trạm Cấp Nước Xã Ngũ Lạc</title>
-  <link rel="icon" href="https://i.ibb.co/VWk84rgd/TR-M-C-P-N-C.png" type="image/png">
+  <title>Trạm Cấp Nước Xã Ngũ Lạc - Trang Chủ</title>
+  
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
+  
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary-blue': '#0056b3',    /* Xanh dương đậm chủ đạo */
+            'secondary-blue': '#007bff',  /* Xanh dương sáng hơn, nhấn nhá */
+            'accent-light': '#e0f2f7',    /* Xanh rất nhạt, nền phụ */
+            'dark-text': '#212529',       /* Màu chữ đen đậm */
+            'light-text': '#6c757d',      /* Màu chữ xám nhạt hơn */
+            'bg-main': '#f8f9fa',         /* Nền tổng thể sáng */
+            'border-subtle': '#dee2e6',   /* Màu border nhẹ nhàng */
+          },
+          fontFamily: {
+            // Font hiện đại và dễ đọc. Đã import từ Google Fonts bên dưới.
+            sans: ['"Plus Jakarta Sans"', 'Roboto', 'Arial', 'sans-serif'], 
+          },
+          boxShadow: {
+            'card': '0 4px 12px rgba(0, 0, 0, 0.08)', /* Bóng đổ tinh tế cho các card */
+            'header': '0 10px 30px rgba(0, 0, 0, 0.1)', /* Bóng đổ rõ hơn cho header */
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
-<body class="bg-blue-50 text-gray-800">
+<body class="bg-bg-main text-dark-text font-sans antialiased min-h-screen flex flex-col">
 
-  <header class="bg-blue-700 text-white p-4">
-    <div class="container mx-auto flex items-center">
-      <img src="https://i.ibb.co/VWk84rgd/TR-M-C-P-N-C.png" alt="Logo Trạm Cấp Nước Xã Ngũ Lạc" class="h-16 w-16 mr-4">
-      <div>
-        <h1 class="text-2xl font-bold">Trạm Cấp Nước Xã Ngũ Lạc</h1>
-        <p class="text-sm">Trực thuộc Trung tâm Cấp nước & Vệ sinh môi trường tỉnh Vĩnh Long</p>
-      </div>
-    </div>
-  </header>
+  <div id="header-placeholder"></div>
 
-  <nav class="bg-blue-600 text-white p-2">
-    <div class="container mx-auto flex gap-4 flex-wrap">
-      <a href="index.html" class="hover:underline">Trang chủ</a>
-      <a href="about.html" class="hover:underline">Giới thiệu</a>
-      <a href="news.html" class="hover:underline">Tin tức</a>
-      <a href="gallery.html" class="hover:underline">Thư viện ảnh</a>
-      <a href="docs.html" class="hover:underline">Văn bản</a>
-      <a href="contact.html" class="hover:underline">Liên hệ</a>
-      <a href="admin.html" class="hover:underline">Admin</a>
-    </div>
-  </nav>
+  <main class="container mx-auto my-8 p-4 md:p-8 flex-grow">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-  <main class="container mx-auto mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-
-    <section class="md:col-span-2">
-      <h2 class="text-xl font-semibold mb-4">Bài viết từ Trạm Ngũ Lạc</h2>
-      <div id="local-articles-container" class="space-y-4">
+      <section class="md:col-span-2 bg-white shadow-card rounded-lg p-6">
+        <h2 class="text-2xl font-semibold text-primary-blue mb-6 border-b-2 pb-3 border-border-subtle">Bài viết từ Trạm Ngũ Lạc</h2>
+        <div id="local-articles-container" class="space-y-6">
+          <p class="text-light-text italic">Đang tải bài viết...</p> 
         </div>
-    </section>
+      </section>
 
-    <aside id="external-news" class="md:col-span-1">
-      <h2 class="text-xl font-semibold mb-4">Bài viết từ Trung tâm Cấp nước Tỉnh</h2>
-      <div id="external-articles-container" class="space-y-4">
+      <aside id="external-news" class="md:col-span-1 bg-white shadow-card rounded-lg p-6">
+        <h2 class="text-2xl font-semibold text-primary-blue mb-6 border-b-2 pb-3 border-border-subtle">Bài viết từ Trung tâm Cấp nước Tỉnh</h2>
+        <div id="external-articles-container" class="space-y-6">
+          <p class="text-light-text italic">Đang tải bài viết...</p>
         </div>
-    </aside>
+      </aside>
 
+    </div>
   </main>
 
-  <footer class="bg-blue-700 text-white mt-12 p-4 text-center">
-    &copy; 2025 Trạm Cấp Nước Xã Ngũ Lạc. Mọi quyền được bảo lưu.
-  </footer>
+  <div id="footer-placeholder"></div>
 
-  <script src="js/rss-load.js"></script>
-
-<script>
-fetch("https://docs.google.com/spreadsheets/d/1qJBxipiSIZgjWNUtnIfR4GMX39L18QuERiJcPkq8Swg/edit?usp=sharing")
-  .then(res => res.text())
-  .then(csv => {
-    const rows = csv.split("\n").slice(1);
-    const localContainer = document.getElementById("local-articles-container");
-    const externalContainer = document.getElementById("external-articles-container");
-    
-    // Đảm bảo cả hai container đều tồn tại
-    if (!localContainer || !externalContainer) {
-        console.error("Không tìm thấy các container bài viết.");
-        return;
-    }
-
-    rows.forEach(line => {
-      const parts = line.split(","); 
-      // Cần có ít nhất 5 cột: Tiêu đề, Ngày đăng, Nội dung, URL, Loại
-      if (parts.length < 5) return; 
-
-      const title = parts[0].trim();
-      const date = parts[1].trim();
-      const content = parts[2].trim();
-      const url = parts[3].trim(); 
-      const type = parts[4].trim(); // Lấy loại bài viết từ cột thứ 5 (index 4)
-
-      if (!title) return; // Tiêu đề là bắt buộc
-
-      const el = document.createElement("article");
-      el.className = "bg-white shadow p-4 rounded-xl mb-4";
-      
-      let articleHTML = `
-        <h3 class="font-bold text-lg">
-      `;
-
-      // Nếu có URL, bọc tiêu đề trong thẻ <a>, nếu không thì chỉ hiển thị tiêu đề
-      if (url) {
-          articleHTML += `
-            <a href="${url}" target="_blank" class="hover:underline text-blue-700">
-                ${title}
-            </a>
-          `;
-      } else {
-          articleHTML += `${title}`;
-      }
-      
-      articleHTML += `
-        </h3>
-        <p class="text-sm text-gray-600">Ngày đăng: ${new Date(date).toLocaleDateString("vi-VN")}</p>
-        <p>${content}</p>
-      `;
-      el.innerHTML = articleHTML;
-
-      // Phân loại và thêm bài viết vào container tương ứng
-      if (type === "Trạm") {
-          localContainer.appendChild(el);
-      } else if (type === "Tỉnh") {
-          externalContainer.appendChild(el);
-      }
-    });
-  })
-  .catch(err => console.error("Lỗi khi tải Google Sheet:", err));
-</script>
+  <script src="js/main.js"></script>
+  <script src="js/posts.js"></script>
 
 </body>
 </html>

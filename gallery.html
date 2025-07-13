@@ -1,17 +1,102 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thư viện ảnh - Trạm Cấp Nước</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trạm Cấp Nước Xã Ngũ Lạc - Thư Viện Ảnh</title>
+  
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary-blue': '#0056b3',
+            'secondary-blue': '#007bff',
+            'accent-light': '#e0f2f7',
+            'dark-text': '#212529',
+            'light-text': '#6c757d',
+            'bg-main': '#f8f9fa',
+            'border-subtle': '#dee2e6',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Roboto', 'Arial', 'sans-serif'], 
+          },
+          boxShadow: {
+            'card': '0 4px 12px rgba(0, 0, 0, 0.08)',
+            'header': '0 10px 30px rgba(0, 0, 0, 0.1)',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-blue-50 text-gray-800">
-  <header class="bg-blue-700 text-white p-4"><div class="container mx-auto"><h1 class="text-2xl font-bold">Thư viện ảnh</h1></div></header>
-  <nav class="bg-blue-600 text-white p-2"><div class="container mx-auto flex gap-4 flex-wrap">
-    <a href="index.html">Trang chủ</a><a href="about.html">Giới thiệu</a><a href="news.html">Tin tức</a><a href="gallery.html" class="font-bold underline">Thư viện ảnh</a><a href="docs.html">Văn bản</a><a href="contact.html">Liên hệ</a><a href="admin.html">Admin</a></div></nav>
-  <main class="container mx-auto mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
-    <img src="https://ttnuocsachtravinh.vn/upload/photos/1/sodotochuc1.png" class="rounded-xl shadow" />
-    <!-- Thêm ảnh khác nếu có -->
+<body class="bg-bg-main text-dark-text font-sans antialiased min-h-screen flex flex-col">
+
+  <div id="header-placeholder"></div>
+
+  <main class="container mx-auto my-8 p-4 md:p-8 flex-grow bg-white shadow-card rounded-lg">
+    <h1 class="text-3xl font-bold text-primary-blue mb-6 border-b-2 pb-3 border-border-subtle">Thư Viện Ảnh</h1>
+    
+    <p class="text-lg mb-6 text-light-text">
+        Khám phá những khoảnh khắc đáng nhớ và hoạt động của Trạm Cấp Nước Xã Ngũ Lạc qua các hình ảnh.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+            <img src="https://via.placeholder.com/600x400/007bff/ffffff?text=Hoat+Dong+1" alt="Hoạt động cấp nước 1" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-end p-4">
+                <p class="text-white text-lg font-semibold">Bảo trì hệ thống</p>
+            </div>
+        </div>
+
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+            <img src="https://via.placeholder.com/600x400/0056b3/ffffff?text=Hoat+Dong+2" alt="Hoạt động cấp nước 2" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-end p-4">
+                <p class="text-white text-lg font-semibold">Tập huấn an toàn lao động</p>
+            </div>
+        </div>
+
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+            <img src="https://via.placeholder.com/600x400/007bff/ffffff?text=Hoat+Dong+3" alt="Hoạt động cấp nước 3" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-end p-4">
+                <p class="text-white text-lg font-semibold">Khám sức khỏe định kỳ</p>
+            </div>
+        </div>
+
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+            <img src="https://via.placeholder.com/600x400/0056b3/ffffff?text=Hoat+Dong+4" alt="Hoạt động cấp nước 4" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-end p-4">
+                <p class="text-white text-lg font-semibold">Hội nghị khách hàng</p>
+            </div>
+        </div>
+
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+            <img src="https://via.placeholder.com/600x400/007bff/ffffff?text=Hoat+Dong+5" alt="Hoạt động cấp nước 5" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-end p-4">
+                <p class="text-white text-lg font-semibold">Khởi công dự án mới</p>
+            </div>
+        </div>
+        
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+            <img src="https://via.placeholder.com/600x400/0056b3/ffffff?text=Hoat+Dong+6" alt="Hoạt động cấp nước 6" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-end p-4">
+                <p class="text-white text-lg font-semibold">Trao tặng bồn chứa nước</p>
+            </div>
+        </div>
+        
+        </div>
   </main>
-  <footer class="bg-blue-700 text-white mt-12 p-4 text-center">&copy; 2025 Trạm Cấp Nước Xã Ngũ Lạc.</footer>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/main.js"></script>
+
 </body>
 </html>

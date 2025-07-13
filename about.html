@@ -3,19 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Giới thiệu - Trạm Cấp Nước Xã Ngũ Lạc</title>
+  <title>Trạm Cấp Nước Xã Ngũ Lạc - Giới Thiệu</title> <link rel="icon" href="assets/images/logo.png" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary-blue': '#0056b3',
+            'secondary-blue': '#007bff',
+            'accent-light': '#e0f2f7',
+            'dark-text': '#212529',
+            'light-text': '#6c757d',
+            'bg-main': '#f8f9fa',
+            'border-subtle': '#dee2e6',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Roboto', 'Arial', 'sans-serif'], 
+          },
+          boxShadow: {
+            'card': '0 4px 12px rgba(0, 0, 0, 0.08)',
+            'header': '0 10px 30px rgba(0, 0, 0, 0.1)',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
-<body class="bg-blue-50 text-gray-800">
-  <header class="bg-blue-700 text-white p-4"><div class="container mx-auto"><h1 class="text-2xl font-bold">Trạm Cấp Nước Xã Ngũ Lạc</h1></div></header>
-  <nav class="bg-blue-600 text-white p-2"><div class="container mx-auto flex gap-4 flex-wrap">
-    <a href="index.html">Trang chủ</a><a href="about.html" class="font-bold underline">Giới thiệu</a><a href="news.html">Tin tức</a><a href="gallery.html">Thư viện ảnh</a><a href="docs.html">Văn bản</a><a href="contact.html">Liên hệ</a><a href="admin.html">Admin</a></div></nav>
-  <main class="container mx-auto mt-8">
-    <h2 class="text-2xl font-semibold mb-4">Giới thiệu</h2>
-    <p class="mb-4">Trạm Cấp Nước Xã Ngũ Lạc trực thuộc Trung tâm Cấp nước và Vệ sinh môi trường tỉnh Vĩnh Long.</p>
-    <h3 class="text-xl font-semibold mb-2">Sơ đồ tổ chức</h3>
-    <img src="https://ttnuocsachtravinh.vn/upload/photos/1/sodotochuc1.png" alt="Sơ đồ tổ chức" class="w-full md:w-2/3 mx-auto rounded-xl shadow mb-8" />
+<body class="bg-bg-main text-dark-text font-sans antialiased min-h-screen flex flex-col">
+
+  <div id="header-placeholder"></div>
+
+  <main class="container mx-auto my-8 p-4 md:p-8 flex-grow bg-white shadow-card rounded-lg">
+    <h1 class="text-3xl font-bold text-primary-blue mb-6 border-b-2 pb-3 border-border-subtle">Trang Giới thiệu</h1> <p class="text-lg mb-4 text-light-text">
+      Đây là nội dung cho trang Giới thiệu. Bạn có thể thay đổi nó để cung cấp thông tin chi tiết về trạm cấp nước, 
+      lịch sử hình thành, sứ mệnh, tầm nhìn, và các giá trị cốt lõi.
+    </p>
+    <p class="text-dark-text leading-relaxed">
+      Trạm Cấp Nước Xã Ngũ Lạc tự hào là đơn vị tiên phong trong việc cung cấp nguồn nước sạch, an toàn và ổn định 
+      cho toàn thể cộng đồng dân cư trong khu vực. Với cam kết về chất lượng và dịch vụ, chúng tôi không ngừng 
+      đầu tư vào công nghệ hiện đại, nâng cao năng lực đội ngũ kỹ thuật viên để đảm bảo hệ thống hoạt động hiệu quả tối đa.
+    </p>
+    <h2 class="text-2xl font-semibold text-primary-blue mt-8 mb-4">Sứ mệnh của chúng tôi</h2>
+    <p class="text-dark-text leading-relaxed">
+      Sứ mệnh của Trạm là mang lại sự an tâm về nguồn nước cho mọi gia đình, góp phần nâng cao chất lượng cuộc sống 
+      và bảo vệ sức khỏe cộng đồng. Chúng tôi hoạt động với tinh thần trách nhiệm cao, minh bạch và luôn lắng nghe 
+      ý kiến đóng góp từ khách hàng để ngày càng hoàn thiện.
+    </p>
+    <h2 class="text-2xl font-semibold text-primary-blue mt-8 mb-4">Liên hệ với chúng tôi</h2>
+    <p class="text-dark-text leading-relaxed">
+      Nếu bạn có bất kỳ câu hỏi hoặc cần hỗ trợ về dịch vụ cấp nước, xin đừng ngần ngại liên hệ với chúng tôi qua 
+      thông tin ở chân trang hoặc truy cập trang <a href="contact.html" class="text-secondary-blue hover:underline">Liên hệ</a>.
+    </p>
   </main>
-  <footer class="bg-blue-700 text-white mt-12 p-4 text-center">&copy; 2025 Trạm Cấp Nước Xã Ngũ Lạc.</footer>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/main.js"></script>
+
 </body>
 </html>

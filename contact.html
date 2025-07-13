@@ -1,18 +1,116 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Liên hệ - Trạm Cấp Nước</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trạm Cấp Nước Xã Ngũ Lạc - Liên Hệ</title>
+  
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary-blue': '#0056b3',
+            'secondary-blue': '#007bff',
+            'accent-light': '#e0f2f7',
+            'dark-text': '#212529',
+            'light-text': '#6c757d',
+            'bg-main': '#f8f9fa',
+            'border-subtle': '#dee2e6',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Roboto', 'Arial', 'sans-serif'], 
+          },
+          boxShadow: {
+            'card': '0 4px 12px rgba(0, 0, 0, 0.08)',
+            'header': '0 10px 30px rgba(0, 0, 0, 0.1)',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-blue-50 text-gray-800">
-  <header class="bg-blue-700 text-white p-4"><div class="container mx-auto"><h1 class="text-2xl font-bold">Liên hệ</h1></div></header>
-  <nav class="bg-blue-600 text-white p-2"><div class="container mx-auto flex gap-4 flex-wrap">
-    <a href="index.html">Trang chủ</a><a href="about.html">Giới thiệu</a><a href="news.html">Tin tức</a><a href="gallery.html">Thư viện ảnh</a><a href="docs.html">Văn bản</a><a href="contact.html" class="font-bold underline">Liên hệ</a><a href="admin.html">Admin</a></div></nav>
-  <main class="container mx-auto mt-8">
-    <p>Địa chỉ: Ấp Rọ Say, Xã Ngũ Lạc, Tỉnh Vĩnh Long</p>
-    <p>Điện thoại: Nguyễn Trung Trận - 0819212963 </p>
-    <p>Email: </p>
+<body class="bg-bg-main text-dark-text font-sans antialiased min-h-screen flex flex-col">
+
+  <div id="header-placeholder"></div>
+
+  <main class="container mx-auto my-8 p-4 md:p-8 flex-grow">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <section class="bg-white shadow-card rounded-lg p-6">
+        <h2 class="text-3xl font-bold text-primary-blue mb-6 border-b-2 pb-3 border-border-subtle">Thông Tin Liên Hệ</h2>
+        <div class="space-y-4 text-dark-text">
+          <div class="flex items-center">
+            <svg class="w-6 h-6 text-secondary-blue mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+            <p><strong>Địa chỉ:</strong> Xã Ngũ Lạc, Huyện Duyên Hải, Tỉnh Trà Vinh</p>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-6 h-6 text-secondary-blue mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.57.12.35.03.75-.25 1.02L6.62 10.79z"/></svg>
+            <p><strong>Điện thoại:</strong> <a href="tel:+842943878999" class="text-dark-text hover:text-secondary-blue hover:underline">(0294) 3878 999</a></p>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-6 h-6 text-secondary-blue mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <p><strong>Email:</strong> <a href="mailto:tracapnuocngulac@example.com" class="text-dark-text hover:text-secondary-blue hover:underline">tracapnuocngulac@example.com</a></p>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-6 h-6 text-secondary-blue mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-6h2v6zm2 0h-2V7h2v10z"/></svg>
+            <p><strong>Giờ làm việc:</strong> Thứ Hai - Thứ Sáu: 8:00 AM - 5:00 PM</p>
+          </div>
+        </div>
+        
+        <div class="mt-8">
+            <h3 class="text-2xl font-semibold text-primary-blue mb-4">Vị trí của chúng tôi</h3>
+            <div class="aspect-w-16 aspect-h-9 w-full rounded-lg overflow-hidden shadow-md border border-border-subtle">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.639304910385!2d106.123456!3d9.876543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQzJzQwLjkiTiAxMDbCsDA3JzMyLjAiRSI!5e0!3m2!1svi!2sVN!4v1678901234567!5m2!1svi!2sVN" 
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <p class="text-sm text-light-text mt-2 text-center">Bản đồ chỉ mang tính chất minh họa. Vui lòng thay thế bằng bản đồ thực tế của trạm.</p>
+            </div>
+        </div>
+      </section>
+
+      <section class="bg-white shadow-card rounded-lg p-6">
+        <h2 class="text-3xl font-bold text-primary-blue mb-6 border-b-2 pb-3 border-border-subtle">Gửi Tin Nhắn Cho Chúng Tôi</h2>
+        <form action="#" method="POST" class="space-y-4">
+          <div>
+            <label for="name" class="block text-dark-text text-sm font-medium mb-2">Họ và tên</label>
+            <input type="text" id="name" name="name" class="w-full p-3 border border-border-subtle rounded-md focus:ring-2 focus:ring-secondary-blue focus:border-transparent transition-all duration-200" placeholder="Nguyễn Văn A" required>
+          </div>
+          <div>
+            <label for="email" class="block text-dark-text text-sm font-medium mb-2">Email</label>
+            <input type="email" id="email" name="email" class="w-full p-3 border border-border-subtle rounded-md focus:ring-2 focus:ring-secondary-blue focus:border-transparent transition-all duration-200" placeholder="email@example.com" required>
+          </div>
+          <div>
+            <label for="subject" class="block text-dark-text text-sm font-medium mb-2">Chủ đề</label>
+            <input type="text" id="subject" name="subject" class="w-full p-3 border border-border-subtle rounded-md focus:ring-2 focus:ring-secondary-blue focus:border-transparent transition-all duration-200" placeholder="Về dịch vụ cấp nước" required>
+          </div>
+          <div>
+            <label for="message" class="block text-dark-text text-sm font-medium mb-2">Nội dung tin nhắn</label>
+            <textarea id="message" name="message" rows="5" class="w-full p-3 border border-border-subtle rounded-md focus:ring-2 focus:ring-secondary-blue focus:border-transparent transition-all duration-200" placeholder="Viết tin nhắn của bạn tại đây..." required></textarea>
+          </div>
+          <div>
+            <button type="submit" class="w-full bg-primary-blue text-white py-3 px-6 rounded-md hover:bg-secondary-blue transition-colors duration-300 font-semibold text-lg shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-blue focus:ring-offset-2">Gửi Tin Nhắn</button>
+          </div>
+          <p class="text-sm text-light-text text-center mt-4">
+              Lưu ý: Biểu mẫu này chỉ mang tính chất minh họa. Để gửi tin nhắn thực tế, bạn cần kết nối nó với một dịch vụ backend (ví dụ: Formspree, Netlify Forms, hoặc một API server của bạn).
+          </p>
+        </form>
+      </section>
+
+    </div>
   </main>
-  <footer class="bg-blue-700 text-white mt-12 p-4 text-center">&copy; 2025 Trạm Cấp Nước Xã Ngũ Lạc.</footer>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/main.js"></script>
+
 </body>
 </html>
