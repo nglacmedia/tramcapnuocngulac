@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tin tức - Trạm Cấp Nước Xã Ngũ Lạc</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-700 text-white p-4">
+    <div class="container mx-auto">
+      <h1 class="text-2xl font-bold">Tin tức</h1>
+      <p class="text-sm">Tổng hợp thông tin mới từ Trạm và Trung tâm Tỉnh</p>
+    </div>
+  </header>
+
+  <!-- Menu -->
+  <nav class="bg-blue-600 text-white p-2">
+    <div class="container mx-auto flex gap-4 flex-wrap">
+      <a href="index.html">Trang chủ</a>
+      <a href="about.html">Giới thiệu</a>
+      <a href="news.html" class="font-bold underline">Tin tức</a>
+      <a href="gallery.html">Thư viện ảnh</a>
+      <a href="docs.html">Văn bản</a>
+      <a href="contact.html">Liên hệ</a>
+      <a href="admin.html">Admin</a>
+    </div>
+  </nav>
+
+  <!-- Nội dung chính -->
+  <main class="container mx-auto mt-6">
+    <section id="external-news" class="space-y-4">
+      <!-- Tin tức sẽ được load từ RSS -->
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-700 text-white mt-12 p-4 text-center">
+    &copy; 2025 Trạm Cấp Nước Xã Ngũ Lạc. Mọi quyền được bảo lưu.
+  </footer>
+
+  <!-- Script load RSS -->
+  <script src="js/rss-load.js"></script>
+</body>
+</html>
