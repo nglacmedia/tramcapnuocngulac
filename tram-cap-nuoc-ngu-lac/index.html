@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trạm Cấp Nước Xã Ngũ Lạc</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-700 text-white p-4">
+    <div class="container mx-auto">
+      <h1 class="text-2xl font-bold">Trạm Cấp Nước Xã Ngũ Lạc</h1>
+      <p class="text-sm">Trực thuộc Trung tâm Cấp nước & Vệ sinh môi trường tỉnh Vĩnh Long</p>
+    </div>
+  </header>
+
+  <!-- Menu -->
+  <nav class="bg-blue-600 text-white p-2">
+    <div class="container mx-auto flex gap-4 flex-wrap">
+      <a href="index.html" class="hover:underline">Trang chủ</a>
+      <a href="about.html" class="hover:underline">Giới thiệu</a>
+      <a href="news.html" class="hover:underline">Tin tức</a>
+      <a href="gallery.html" class="hover:underline">Thư viện ảnh</a>
+      <a href="docs.html" class="hover:underline">Văn bản</a>
+      <a href="contact.html" class="hover:underline">Liên hệ</a>
+      <a href="admin.html" class="hover:underline">Admin</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container mx-auto mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <!-- Local Posts -->
+    <section class="md:col-span-2">
+      <h2 class="text-xl font-semibold mb-4">Bài viết từ Trạm Ngũ Lạc</h2>
+      <div class="space-y-4">
+        <article class="bg-white shadow p-4 rounded-xl">
+          <h3 class="font-bold text-lg">Thông báo lịch cúp nước ngày 15/7</h3>
+          <p class="text-sm text-gray-600">Ngày đăng: 12/07/2025</p>
+          <p>Trạm xin thông báo lịch tạm ngưng cấp nước để bảo trì hệ thống...</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- External Posts -->
+    <aside id="external-news" class="md:col-span-1">
+      <!-- Bài viết từ trung tâm tỉnh sẽ được load tự động -->
+    </aside>
+
+  </main>
+
+  <footer class="bg-blue-700 text-white mt-12 p-4 text-center">
+    &copy; 2025 Trạm Cấp Nước Xã Ngũ Lạc. Mọi quyền được bảo lưu.
+  </footer>
+
+  <script src="js/rss-load.js"></script>
+</body>
+</html>
