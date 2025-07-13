@@ -29,4 +29,18 @@ function loadFeed(url, containerId, title) {
 
 window.addEventListener("DOMContentLoaded", () => {
   loadFeed("https://trungtamnuocsach.vinhlong.gov.vn/rssfeed.rss", "external-news", "Thông báo từ Trung tâm");
+if (url) {
+    articleHTML += `
+      <a href="${url}" target="_blank" class="hover:underline text-blue-700">
+          ${title}
+      </a>
+    `;
+} else {
+    articleHTML += `${title}`;
+}
+  if (type === "Trạm") {
+    localContainer.appendChild(el);
+} else if (type === "Tỉnh") {
+    externalContainer.appendChild(el);
+}
 });
