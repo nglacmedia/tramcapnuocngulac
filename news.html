@@ -1,47 +1,39 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tin tức - Trạm Cấp Nước Xã Ngũ Lạc</title>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tin tức - Trạm Cấp Nước</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-blue-50 text-gray-800">
-
-  <!-- Header -->
-  <header class="bg-blue-700 text-white p-4">
-    <div class="container mx-auto">
-      <h1 class="text-2xl font-bold">Tin tức</h1>
-      <p class="text-sm">Tổng hợp thông tin mới từ Trạm và Trung tâm Tỉnh</p>
-    </div>
-  </header>
-
-  <!-- Menu -->
-  <nav class="bg-blue-600 text-white p-2">
-    <div class="container mx-auto flex gap-4 flex-wrap">
-      <a href="index.html">Trang chủ</a>
-      <a href="about.html">Giới thiệu</a>
-      <a href="news.html" class="font-bold underline">Tin tức</a>
-      <a href="gallery.html">Thư viện ảnh</a>
-      <a href="docs.html">Văn bản</a>
-      <a href="contact.html">Liên hệ</a>
-      <a href="admin.html">Admin</a>
-    </div>
-  </nav>
-
-  <!-- Nội dung chính -->
-  <main class="container mx-auto mt-6">
-    <section id="external-news" class="space-y-4">
-      <!-- Tin tức sẽ được load từ RSS -->
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-blue-700 text-white mt-12 p-4 text-center">
-    &copy; 2025 Trạm Cấp Nước Xã Ngũ Lạc. Mọi quyền được bảo lưu.
-  </footer>
-
-  <!-- Script load RSS -->
+  <header class="bg-blue-700 text-white p-4"><div class="container mx-auto"><h1 class="text-2xl font-bold">Tin tức</h1></div></header>
+  <nav class="bg-blue-600 text-white p-2"><div class="container mx-auto flex gap-4 flex-wrap">
+    <a href="index.html">Trang chủ</a><a href="about.html">Giới thiệu</a><a href="news.html" class="font-bold underline">Tin tức</a><a href="gallery.html">Thư viện ảnh</a><a href="docs.html">Văn bản</a><a href="contact.html">Liên hệ</a><a href="admin.html">Admin</a></div></nav>
+  <main>
+    <section class="container mx-auto mt-6"></section> class="container mx-auto mt-6" id="external-news"></main>
+  <footer class="bg-blue-700 text-white mt-12 p-4 text-center">&copy; 2025 Trạm Cấp Nước Xã Ngũ Lạc.</footer>
   <script src="js/rss-load.js"></script>
+
+<script>
+fetch("https://docs.google.com/spreadsheets/d/1apDACOrX5Xd8Q7ugZm6Fdjti1X0LhAx0QCopuXu9pRQ/pub?output=csv")
+  .then(res => res.text())
+  .then(csv => {
+    const rows = csv.split("\n").slice(1);
+    const container = document.querySelector("main section") || document.querySelector("main");
+    rows.forEach(line => {
+      const [title, date, content] = line.split(",");
+      if (!title) return;
+      const el = document.createElement("article");
+      el.className = "bg-white shadow p-4 rounded-xl mb-4";
+      el.innerHTML = `
+        <h3 class="font-bold text-lg">${title}</h3>
+        <p class="text-sm text-gray-600">Ngày đăng: ${new Date(date).toLocaleDateString("vi-VN")}</p>
+        <p>${content}</p>
+      `;
+      container.appendChild(el);
+    });
+  })
+  .catch(err => console.error("Lỗi khi tải Google Sheet:", err));
+</script>
+
 </body>
 </html>

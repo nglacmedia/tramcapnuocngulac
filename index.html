@@ -56,5 +56,28 @@
   </footer>
 
   <script src="js/rss-load.js"></script>
+
+<script>
+fetch("https://docs.google.com/spreadsheets/d/1apDACOrX5Xd8Q7ugZm6Fdjti1X0LhAx0QCopuXu9pRQ/pub?output=csv")
+  .then(res => res.text())
+  .then(csv => {
+    const rows = csv.split("\n").slice(1);
+    const container = document.querySelector("main section") || document.querySelector("main");
+    rows.forEach(line => {
+      const [title, date, content] = line.split(",");
+      if (!title) return;
+      const el = document.createElement("article");
+      el.className = "bg-white shadow p-4 rounded-xl mb-4";
+      el.innerHTML = `
+        <h3 class="font-bold text-lg">${title}</h3>
+        <p class="text-sm text-gray-600">Ngày đăng: ${new Date(date).toLocaleDateString("vi-VN")}</p>
+        <p>${content}</p>
+      `;
+      container.appendChild(el);
+    });
+  })
+  .catch(err => console.error("Lỗi khi tải Google Sheet:", err));
+</script>
+
 </body>
 </html>
