@@ -35,13 +35,8 @@
 
     <section class="md:col-span-2">
       <h2 class="text-xl font-semibold mb-4">Bài viết từ Trạm Ngũ Lạc</h2>
-      <div class="space-y-4">
-        <article class="bg-white shadow p-4 rounded-xl">
-          <h3 class="font-bold text-lg">Thông báo lịch cúp nước ngày 15/7</h3>
-          <p class="text-sm text-gray-600">Ngày đăng: 12/07/2025</p>
-          <p>Trạm xin thông báo lịch tạm ngưng cấp nước để bảo trì hệ thống...</p>
-        </article>
-      </div>
+      <div id="local-articles-container" class="space-y-4">
+        </div>
     </section>
 
     <aside id="external-news" class="md:col-span-1">
@@ -63,34 +58,59 @@ fetch("https://docs.google.com/spreadsheets/d/1apDACOrX5Xd8Q7ugZm6Fdjti1X0LhAx0Q
   .then(res => res.text())
   .then(csv => {
     const rows = csv.split("\n").slice(1);
-    const container = document.getElementById("external-articles-container");
-    if (!container) return; 
+    const localContainer = document.getElementById("local-articles-container");
+    const externalContainer = document.getElementById("external-articles-container");
+    
+    // Đảm bảo cả hai container đều tồn tại
+    if (!localContainer || !externalContainer) {
+        console.error("Không tìm thấy các container bài viết.");
+        return;
+    }
 
     rows.forEach(line => {
       const parts = line.split(","); 
-      // Đảm bảo có đủ 4 cột: Tiêu đề, Ngày đăng, Nội dung, URL
-      // Nếu số cột thay đổi, bạn cần điều chỉnh parts[index] tương ứng
-      if (parts.length < 4) return; 
+      // Cần có ít nhất 5 cột: Tiêu đề, Ngày đăng, Nội dung, URL, Loại
+      if (parts.length < 5) return; 
 
-      const title = parts[0];
-      const date = parts[1];
-      const content = parts[2];
-      const url = parts[3]; // Lấy URL từ cột thứ 4 (index 3)
+      const title = parts[0].trim();
+      const date = parts[1].trim();
+      const content = parts[2].trim();
+      const url = parts[3].trim(); 
+      const type = parts[4].trim(); // Lấy loại bài viết từ cột thứ 5 (index 4)
 
-      if (!title || !url) return; // Đảm bảo có tiêu đề và URL
+      if (!title) return; // Tiêu đề là bắt buộc
 
       const el = document.createElement("article");
       el.className = "bg-white shadow p-4 rounded-xl mb-4";
-      el.innerHTML = `
+      
+      let articleHTML = `
         <h3 class="font-bold text-lg">
-            <a href="${url.trim()}" target="_blank" class="hover:underline text-blue-700">
-                ${title.trim()}
+      `;
+
+      // Nếu có URL, bọc tiêu đề trong thẻ <a>, nếu không thì chỉ hiển thị tiêu đề
+      if (url) {
+          articleHTML += `
+            <a href="${url}" target="_blank" class="hover:underline text-blue-700">
+                ${title}
             </a>
+          `;
+      } else {
+          articleHTML += `${title}`;
+      }
+      
+      articleHTML += `
         </h3>
         <p class="text-sm text-gray-600">Ngày đăng: ${new Date(date).toLocaleDateString("vi-VN")}</p>
-        <p>${content.trim()}</p>
+        <p>${content}</p>
       `;
-      container.appendChild(el);
+      el.innerHTML = articleHTML;
+
+      // Phân loại và thêm bài viết vào container tương ứng
+      if (type === "Trạm") {
+          localContainer.appendChild(el);
+      } else if (type === "Tỉnh") {
+          externalContainer.appendChild(el);
+      }
     });
   })
   .catch(err => console.error("Lỗi khi tải Google Sheet:", err));
