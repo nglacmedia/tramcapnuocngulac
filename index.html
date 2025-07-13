@@ -54,7 +54,7 @@
   <script src="js/rss-load.js"></script>
 
 <script>
-fetch("https://docs.google.com/spreadsheets/d/1apDACOrX5Xd8Q7ugZm6Fdjti1X0LhAx0QCopuXu9pRQ/pub?output=csv")
+fetch("https://docs.google.com/spreadsheets/d/1qJBxipiSIZgjWNUtnIfR4GMX39L18QuERiJcPkq8Swg/edit?usp=sharing")
   .then(res => res.text())
   .then(csv => {
     const rows = csv.split("\n").slice(1);
