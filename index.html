@@ -4,13 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Trạm Cấp Nước Xã Ngũ Lạc</title>
+  <link rel="icon" href="https://i.ibb.co/VWk84rgd/TR-M-C-P-N-C.png" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-blue-50 text-gray-800">
 
   <header class="bg-blue-700 text-white p-4">
     <div class="container mx-auto flex items-center">
-      <img src="https://i.ibb.co/VWk84rgd/TR-M-C-P-N-C.png" alt="Logo Trạm Cấp Nước Xã Ngũ Lạc" class="h-16 w-16 mr-4"> <div>
+      <img src="https://i.ibb.co/VWk84rgd/TR-M-C-P-N-C.png" alt="Logo Trạm Cấp Nước Xã Ngũ Lạc" class="h-16 w-16 mr-4">
+      <div>
         <h1 class="text-2xl font-bold">Trạm Cấp Nước Xã Ngũ Lạc</h1>
         <p class="text-sm">Trực thuộc Trung tâm Cấp nước & Vệ sinh môi trường tỉnh Vĩnh Long</p>
       </div>
@@ -43,7 +45,10 @@
     </section>
 
     <aside id="external-news" class="md:col-span-1">
-      </aside>
+      <h2 class="text-xl font-semibold mb-4">Bài viết từ Trung tâm Cấp nước Tỉnh</h2>
+      <div id="external-articles-container" class="space-y-4">
+        </div>
+    </aside>
 
   </main>
 
@@ -58,16 +63,32 @@ fetch("https://docs.google.com/spreadsheets/d/1apDACOrX5Xd8Q7ugZm6Fdjti1X0LhAx0Q
   .then(res => res.text())
   .then(csv => {
     const rows = csv.split("\n").slice(1);
-    const container = document.querySelector("main section") || document.querySelector("main");
+    const container = document.getElementById("external-articles-container");
+    if (!container) return; 
+
     rows.forEach(line => {
-      const [title, date, content] = line.split(",");
-      if (!title) return;
+      const parts = line.split(","); 
+      // Đảm bảo có đủ 4 cột: Tiêu đề, Ngày đăng, Nội dung, URL
+      // Nếu số cột thay đổi, bạn cần điều chỉnh parts[index] tương ứng
+      if (parts.length < 4) return; 
+
+      const title = parts[0];
+      const date = parts[1];
+      const content = parts[2];
+      const url = parts[3]; // Lấy URL từ cột thứ 4 (index 3)
+
+      if (!title || !url) return; // Đảm bảo có tiêu đề và URL
+
       const el = document.createElement("article");
       el.className = "bg-white shadow p-4 rounded-xl mb-4";
       el.innerHTML = `
-        <h3 class="font-bold text-lg">${title}</h3>
+        <h3 class="font-bold text-lg">
+            <a href="${url.trim()}" target="_blank" class="hover:underline text-blue-700">
+                ${title.trim()}
+            </a>
+        </h3>
         <p class="text-sm text-gray-600">Ngày đăng: ${new Date(date).toLocaleDateString("vi-VN")}</p>
-        <p>${content}</p>
+        <p>${content.trim()}</p>
       `;
       container.appendChild(el);
     });
