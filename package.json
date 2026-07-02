@@ -1,0 +1,21 @@
+{
+  "name": "tram-nuoc-ngu-lac",
+  "version": "1.0.0",
+  "description": "Trang thông tin điện tử Trạm cấp nước xã Ngũ Lạc - tự động tổng hợp tin tức từ Trung tâm Nước sạch & VSMTNT và Sở Nông nghiệp và Môi trường tỉnh Vĩnh Long",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "scrape:now": "node -e \"require('./scraper/scraper').runAllSources().then(()=>process.exit(0))\""
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cheerio": "^1.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "node-cron": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
