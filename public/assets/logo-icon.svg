@@ -1,0 +1,32 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Biểu tượng Trạm cấp nước xã Ngũ Lạc">
+  <defs>
+    <linearGradient id="dropGradIcon" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5FA8D3"/>
+      <stop offset="55%" stop-color="#0B3D62"/>
+      <stop offset="100%" stop-color="#082A46"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Vòng tròn đồng lòng -->
+  <circle cx="100" cy="100" r="92" fill="#FFFFFF" stroke="#0B3D62" stroke-width="6"/>
+  <circle cx="100" cy="100" r="80" fill="none" stroke="#DCE9F2" stroke-width="2"/>
+
+  <!-- Mầm lúa / bông lúa cách điệu, hai bên giọt nước -->
+  <g stroke="#4C9A5B" stroke-width="5" stroke-linecap="round" fill="none">
+    <path d="M78,148 C63,132 60,108 68,82"/>
+    <path d="M122,148 C137,132 140,108 132,82"/>
+  </g>
+  <g fill="#4C9A5B">
+    <ellipse cx="70" cy="96" rx="7" ry="4" transform="rotate(-35 70 96)"/>
+    <ellipse cx="64" cy="114" rx="7" ry="4" transform="rotate(-20 64 114)"/>
+    <ellipse cx="72" cy="132" rx="7" ry="4" transform="rotate(-45 72 132)"/>
+    <ellipse cx="130" cy="96" rx="7" ry="4" transform="rotate(35 130 96)"/>
+    <ellipse cx="136" cy="114" rx="7" ry="4" transform="rotate(20 136 114)"/>
+    <ellipse cx="128" cy="132" rx="7" ry="4" transform="rotate(45 128 132)"/>
+  </g>
+
+  <!-- Giọt nước sạch cách điệu ở trung tâm -->
+  <path d="M100,55 C122,84 135,107 135,126 C135,150 119,167 100,167 C81,167 65,150 65,126 C65,107 78,84 100,55 Z"
+        fill="url(#dropGradIcon)"/>
+  <path d="M89,120 C89,110 94,99 101,90" stroke="#BFE0F2" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.85"/>
+</svg>

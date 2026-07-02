@@ -1,0 +1,38 @@
+<svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo Trạm cấp nước xã Ngũ Lạc">
+  <defs>
+    <linearGradient id="dropGradFull" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5FA8D3"/>
+      <stop offset="55%" stop-color="#0B3D62"/>
+      <stop offset="100%" stop-color="#082A46"/>
+    </linearGradient>
+    <path id="ringLabelPath" d="M 38 175 A 105 105 0 0 1 222 175" fill="none"/>
+  </defs>
+
+  <!-- Vòng tròn đồng lòng, khép kín -->
+  <circle cx="130" cy="130" r="118" fill="#FFFFFF" stroke="#0B3D62" stroke-width="6"/>
+  <circle cx="130" cy="130" r="104" fill="none" stroke="#DCE9F2" stroke-width="2"/>
+
+  <!-- Mầm lúa / bông lúa hai bên, đại diện Nông nghiệp -->
+  <g stroke="#4C9A5B" stroke-width="5" stroke-linecap="round" fill="none">
+    <path d="M104,178 C86,160 82,132 92,102"/>
+    <path d="M156,178 C174,160 178,132 168,102"/>
+  </g>
+  <g fill="#4C9A5B">
+    <ellipse cx="93" cy="118" rx="7" ry="4" transform="rotate(-35 93 118)"/>
+    <ellipse cx="86" cy="138" rx="7" ry="4" transform="rotate(-20 86 138)"/>
+    <ellipse cx="96" cy="160" rx="7" ry="4" transform="rotate(-45 96 160)"/>
+    <ellipse cx="167" cy="118" rx="7" ry="4" transform="rotate(35 167 118)"/>
+    <ellipse cx="174" cy="138" rx="7" ry="4" transform="rotate(20 174 138)"/>
+    <ellipse cx="164" cy="160" rx="7" ry="4" transform="rotate(45 164 160)"/>
+  </g>
+
+  <!-- Giọt nước sạch cách điệu ở trung tâm -->
+  <path d="M130,68 C155,100 170,126 170,148 C170,176 152,196 130,196 C108,196 90,176 90,148 C90,126 105,100 130,68 Z"
+        fill="url(#dropGradFull)"/>
+  <path d="M117,140 C117,128 123,115 131,105" stroke="#BFE0F2" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.85"/>
+
+  <!-- Tên đơn vị chạy theo vòng cung phía dưới -->
+  <text font-family="Inter, Arial, sans-serif" font-size="16.5" font-weight="700" letter-spacing="2" fill="#0B3D62">
+    <textPath href="#ringLabelPath" startOffset="50%" text-anchor="middle">TRẠM NƯỚC SẠCH XÃ NGŨ LẠC</textPath>
+  </text>
+</svg>
